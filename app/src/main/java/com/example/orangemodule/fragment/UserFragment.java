@@ -19,6 +19,14 @@ public class UserFragment extends Fragment {
         // Required empty public constructor
     }
 
+    public static UserFragment newInstance() {
+
+        Bundle args = new Bundle();
+
+        UserFragment fragment = new UserFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

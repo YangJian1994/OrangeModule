@@ -24,7 +24,8 @@
         app:tl_iconHeight="25dp"
         app:tl_iconWidth="30dp"
         app:tl_indicator_color="@color/white"
-        app:tl_textSelectColor="@color/colorPrimary"
-        app:tl_textUnselectColor="@color/gray_black"
-        app:tl_textsize="13sp"></com.flyco.tablayout.CommonTabLayout>
+        app:tl_textSelectColor="#13227a"
+        app:tl_textUnselectColor="#8a8a8a"
+        app:tl_textsize="13sp">
+    </com.flyco.tablayout.CommonTabLayout>
 </LinearLayout>
