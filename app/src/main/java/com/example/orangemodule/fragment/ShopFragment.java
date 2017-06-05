@@ -72,6 +72,7 @@ public class ShopFragment extends Fragment {
             @Override
             public void onRefresh() {
                 //刷新界面
+                swipeRefreshLayout.setRefreshing(false);
             }
         });
     }
