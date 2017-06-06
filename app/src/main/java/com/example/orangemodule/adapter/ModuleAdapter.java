@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.orangemodule.R;
+import com.example.orangemodule.activity.UDiskActivity;
 import com.example.orangemodule.bean.ModuleBean;
 
 import java.util.List;
@@ -36,12 +37,20 @@ public class ModuleAdapter extends RecyclerView.Adapter<ModuleAdapter.ViewHolder
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         if (data != null) {
             ModuleBean moduleBean = data.get(position);
             holder.moduleName.setText(moduleBean.getModuleName());
             holder.moduleLayout.setBackgroundColor(Color.parseColor(moduleBean.getModuleBackground()));
         }
+        holder.moduleLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (position == 2) {
+                    UDiskActivity.startActivity(context);
+                }
+            }
+        });
     }
 
     @Override

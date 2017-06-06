@@ -6,7 +6,7 @@
         android:name="android.hardware.usb.host"
         android:required="true" />
 
-    <!--手机震动权限-->
+    <!-- 手机震动权限 -->
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
@@ -35,9 +35,9 @@
         <receiver
             android:name=".broad.OpenReceiver"
             android:enabled="true"
-            android:exported="true">
+            android:exported="true"></receiver>
 
-        </receiver>
+        <activity android:name=".activity.UDiskActivity"></activity>
     </application>
 
 </manifest>
