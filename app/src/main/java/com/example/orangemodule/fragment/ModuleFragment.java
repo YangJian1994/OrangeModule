@@ -84,6 +84,7 @@ public class ModuleFragment extends Fragment {
             @Override
             public void onRefresh() {
                 //刷新模块显示
+                swipeRefreshLayout.setRefreshing(false);
             }
         });
     }
