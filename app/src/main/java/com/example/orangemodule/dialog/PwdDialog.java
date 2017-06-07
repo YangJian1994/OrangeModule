@@ -3,8 +3,11 @@ package com.example.orangemodule.dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.example.orangemodule.R;
+import com.example.orangemodule.activity.UDiskActivity;
 import com.example.orangemodule.widget.PwdEditText;
 
 /**
@@ -31,6 +34,14 @@ public class PwdDialog extends BaseDialog {
             @Override
             public void onFinish(String str) {
                 //密码输入完后的回调
+                if (str.equals("123456")) {
+                    Log.e("password", str);
+                    UDiskActivity.startActivity(context);
+                    
+                } else {
+                    Log.e("password", str);
+                    Toast.makeText(context, "密码不正确，请再次输入。", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

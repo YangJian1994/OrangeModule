@@ -14,8 +14,7 @@ public class UDiskActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_udisk);
-        PwdDialog pwdDialog = new PwdDialog(this);
-        pwdDialog.show();
+
     }
 
     //启动U盘界面

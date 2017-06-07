@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import com.example.orangemodule.R;
 import com.example.orangemodule.adapter.ModuleAdapter;
 import com.example.orangemodule.bean.ModuleBean;
+import com.example.orangemodule.dialog.PwdDialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +39,8 @@ public class ModuleFragment extends Fragment {
     private List<ModuleBean> data = new ArrayList<>();
     private ModuleAdapter adapter;
 
+    private PwdDialog pwdDialog;
+
     public ModuleFragment() {
         // Required empty public constructor
     }
@@ -57,6 +60,7 @@ public class ModuleFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_module, container, false);
         ButterKnife.bind(this, view);
+        pwdDialog = new PwdDialog(getActivity());
         initData();
         initView();
         initListener();
@@ -87,6 +91,20 @@ public class ModuleFragment extends Fragment {
                 swipeRefreshLayout.setRefreshing(false);
             }
         });
+        adapter.setOnItemClickListener(new ModuleAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                if (position == 2) {
+                    pwdDialog.show();
+                }
+            }
+        });
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        pwdDialog.dismiss();
     }
 
     @Override

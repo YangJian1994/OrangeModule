@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.orangemodule.R;
 import com.example.orangemodule.activity.UDiskActivity;
 import com.example.orangemodule.bean.ModuleBean;
+import com.example.orangemodule.dialog.PwdDialog;
 
 import java.util.List;
 
@@ -24,10 +25,15 @@ public class ModuleAdapter extends RecyclerView.Adapter<ModuleAdapter.ViewHolder
 
     private Context context;
     private List<ModuleBean> data;
+    private OnItemClickListener onItemClickListener = null;
 
     public ModuleAdapter(Context context, List<ModuleBean> data) {
         this.context = context;
         this.data = data;
+    }
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
     }
 
     @Override
@@ -37,20 +43,21 @@ public class ModuleAdapter extends RecyclerView.Adapter<ModuleAdapter.ViewHolder
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(final ViewHolder holder, int position) {
         if (data != null) {
             ModuleBean moduleBean = data.get(position);
             holder.moduleName.setText(moduleBean.getModuleName());
             holder.moduleLayout.setBackgroundColor(Color.parseColor(moduleBean.getModuleBackground()));
         }
-        holder.moduleLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (position == 2) {
-                    UDiskActivity.startActivity(context);
+        if (onItemClickListener != null) {
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int p = holder.getLayoutPosition();
+                    onItemClickListener.onItemClick(holder.itemView, p);
                 }
-            }
-        });
+            });
+        }
     }
 
     @Override
@@ -69,4 +76,10 @@ public class ModuleAdapter extends RecyclerView.Adapter<ModuleAdapter.ViewHolder
             moduleLayout = (LinearLayout) itemView.findViewById(R.id.module_layout);
         }
     }
+
+    public static interface OnItemClickListener {
+        void onItemClick(View view, int position);
+    }
+
+
 }
