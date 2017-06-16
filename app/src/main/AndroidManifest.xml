@@ -21,6 +21,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+                android:resource="@xml/device_filter" />
         </activity>
 
         <receiver
@@ -35,9 +42,14 @@
         <receiver
             android:name=".broad.OpenReceiver"
             android:enabled="true"
-            android:exported="true"></receiver>
+            android:exported="true" />
 
-        <activity android:name=".activity.UDiskActivity"></activity>
+        <activity android:name=".activity.UDiskActivity" />
+        <activity android:name=".activity.AirActivity" />
+        <activity android:name=".activity.BatteryActivity" />
+        <activity android:name=".activity.BluetoothActivity" />
+        <activity android:name=".activity.WristbandActivity" />
+        <activity android:name=".activity.AirDetailActivity"></activity>
     </application>
 
 </manifest>

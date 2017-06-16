@@ -10,9 +10,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import com.example.orangemodule.R;
+import com.example.orangemodule.activity.AirActivity;
+import com.example.orangemodule.activity.BatteryActivity;
+import com.example.orangemodule.activity.BluetoothActivity;
+import com.example.orangemodule.activity.WristbandActivity;
 import com.example.orangemodule.adapter.ModuleAdapter;
 import com.example.orangemodule.bean.ModuleBean;
 import com.example.orangemodule.dialog.PwdDialog;
@@ -94,8 +97,22 @@ public class ModuleFragment extends Fragment {
         adapter.setOnItemClickListener(new ModuleAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                if (position == 2) {
-                    pwdDialog.show();
+                switch (position) {
+                    case 0:
+                        AirActivity.startActivity(getActivity());
+                        break;
+                    case 1:
+                        BatteryActivity.startActivity(getActivity());
+                        break;
+                    case 2:
+                        pwdDialog.show();
+                        break;
+                    case 3:
+                        BluetoothActivity.startActivity(getActivity());
+                        break;
+                    case 4:
+                        WristbandActivity.startActivity(getActivity());
+                        break;
                 }
             }
         });

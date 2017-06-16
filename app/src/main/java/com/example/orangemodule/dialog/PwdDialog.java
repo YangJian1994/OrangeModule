@@ -36,12 +36,15 @@ public class PwdDialog extends BaseDialog {
                 //密码输入完后的回调
                 if (str.equals("123456")) {
                     Log.e("password", str);
+                    pwdEditText.clearText();
                     UDiskActivity.startActivity(context);
                     
                 } else {
                     Log.e("password", str);
+
                     Toast.makeText(context, "密码不正确，请再次输入。", Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
 

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:line="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_air_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.orangemodule.activity.AirDetailActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AQI 24小时实时数据"
+        android:textSize="22sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"/>
+
+    <tech.linjiang.suitlines.SuitLines
+        android:id="@+id/sl_AQI"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#dfdede"
+        line:lineType="curve"
+        line:xySize="8"
+        line:xyColor="@color/colorAccent"
+        line:needEdgeEffect="true"
+        line:colorEdgeEffect="@color/colorPrimaryDark"
+        line:needClickHint="true"
+        line:colorHint="@color/colorPrimary"
+        line:maxOfVisible="8"
+        line:countOfY="6"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PM2.5 24小时实时数据"
+        android:textSize="22sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"/>
+
+    <tech.linjiang.suitlines.SuitLines
+        android:id="@+id/sl_PM"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#dfdede"
+        line:lineType="curve"
+        line:xySize="8"
+        line:xyColor="@color/colorAccent"
+        line:needEdgeEffect="true"
+        line:colorEdgeEffect="@color/colorPrimaryDark"
+        line:needClickHint="true"
+        line:colorHint="@color/colorPrimary"
+        line:maxOfVisible="8"
+        line:countOfY="6"/>
+
+</LinearLayout>

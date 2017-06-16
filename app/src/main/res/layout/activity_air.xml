@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android_custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_air"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.orangemodule.activity.AirActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <com.example.orangemodule.widget.CircleProgressBar
+            android:id="@+id/AQI_Circle"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="10dp"
+            android_custom:textColor="#EFEFEF"
+            android_custom:textIsDisplayable="true"
+            android_custom:textSize="50sp"/>
+
+        <com.example.orangemodule.widget.CircleProgressBar
+            android:id="@+id/PM_Circle"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="45dp"
+            android_custom:textColor="#EFEFEF"
+            android_custom:textIsDisplayable="true"
+            android_custom:textSize="50sp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_airDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="详细数据"
+        android:textSize="22sp"
+        android:layout_marginTop="10dp"
+
+        android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>

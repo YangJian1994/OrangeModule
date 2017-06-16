@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 以下内容的 vendor-id、product-id就是USB的vid和pid -->
+    <usb-device vendor-id="2588" product-id="9030"/>
+
+</resources>
